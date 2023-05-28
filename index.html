@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intitial-scale=1">
+    <title>Резюме моей команды</title>
+    <style>
+        h1 {
+         color: #ebebeb; /* Цвет текста */
+        }
+        h2 {
+         color: #ebebeb; /* Цвет текста */
+        }
+        p {
+         color: #ebebeb; /* Цвет текста */
+        }
+       </style>
+</head>
+<body bgcolor="#000" background="ypi.jpg">
+    
+    <h1 align="center" style="color:#ebebeb; font-size:30px">Приветствуем вас на своей странице</h1>
+    <p align="center"> Это страница с нашим резюме. Меня зовут Яськевич Константин, я учусь в МГТУ "Станкин". Мой одногруппник Ушков Павел, выполнял работу вместе со мной.</p>
+    <p align="center"> Группа АДБ-21-06.</p>
+    <h2>Интересы</h2>
+    <p><i>Яськевич Константин - любит автомобили.</i></p>
+    <p><i>Ушков Павел - любит играть в компьютер.</i></p>
+    <h2>Любимые отрасли в науке</h2>
+    <p><i>Яськевич Константин - программирование на C++.</i></p>
+    <p><i>Ушков Павел - программирование на Phyton.</i></p>
+
+    <h2>Ссылки:</h2>
+    <p>Vk-Костя: <a href="https://vk.com/kostyan_xd">https://vk.com/kostyan_xd</a></p>
+    <p>Telegram-Костя: <a href="https://t.me/Kostik_xD">https://t.me/Kostik_xD</a></p>
+    <p>Vk-Паша: <a href="https://vk.com/lycor1s_8">https://vk.com/lycor1s_8</a></p>
+</body>
+<body style="color: #ebebeb;">
+    <div class="main">
+        <h2>JavaScript Confirm Box</h2>
+        <button class="btn" onclick="myFunction()">Try it</button>
+        <ul id="demo">
+
+        </ul>
+    </div>
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        function myFunction() {
+            (async () => {
+                let response = await fetch('https://kav-api.kovalev.team/servodrive/lastActualData?servoDriveId=1');
+                let el = document.getElementById('demo')
+                el.innerHTML = ""
+                let text = await response.text(); // прочитать тело ответа как текст
+                for (const [key, value] of Object.entries(JSON.parse(text)[0])) {
+                    const newEl = document.createElement("li")
+                    newEl.appendChild(document.createTextNode(`${key}: ${value}`))
+                    el.appendChild(newEl)
+                    await sleep(100)
+                }
+            })()
+        }
+    </script>
+
+</body>
+
+</html>
