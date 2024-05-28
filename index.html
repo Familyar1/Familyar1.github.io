@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intitial-scale=1">
+    <title>Моё резюме</title>
+    <style>
+        h1 {
+         color: #ebebeb; /* Цвет текста */
+        }
+        h2 {
+         color: #ebebeb; /* Цвет текста */
+        }
+        p {
+         color: #ebebeb; /* Цвет текста */
+        }
+
+        body {
+        font-family: Arial, sans-serif;
+        background-repeat: no-repeat; /* Отключение повторения картинки */
+        background-color: #2b2929; /* Цвет фона */
+        }
+        #surname {
+        font-size: 20px;
+        font-weight: bold;
+        }
+
+        .shrift {
+            font-family: italic;
+            font-size: 25px;
+            font-weight: bold;
+            color:rgb(105, 46, 216)
+        }
+
+        .ponti {
+            color: #fff;
+            font-size: 40;
+            text-shadow:5px 5px black;
+            border: 2px solid rgb(216, 46, 188);
+            outline: rgb(46, 139, 216) dotted thick;
+        }
+
+        /* Стили для рамки */
+        .scripts-container {
+            border: 1px solid #ccc; /* Цвет рамки */
+            padding: 10px; /* Отступ внутри рамки */
+            margin-top: 20px; /* Отступ сверху */
+            max-width: 250px; /* Максимальная ширина рамки */
+        }
+
+        /* Стили для картинки */
+        .image-container {
+            max-width: 300px; /* Максимальная ширина картинки */
+            margin: 20px auto; /* Центрирование по горизонтали и отступ сверху/снизу */
+            border: 5px solid #ebebeb; /* Цвет рамки */
+            border-radius: 10px; /* Закругленные углы рамки */
+            overflow: hidden; /* Обрезаем лишнее содержимое, если картинка не влезает в рамку */
+            margin-left: 10px; /* Отступ слева */
+        }
+        .image-container img {
+            width: 100%; /* Чтобы картинка занимала всю доступную ширину контейнера */
+            display: block; /* Убираем лишние отступы */
+        }
+
+        .container {
+            border: 1px solid #ccc; /* Цвет рамки */
+            background-color: gray;
+            padding: 10px; /* Отступ внутри рамки */
+            margin-top: 20px; /* Отступ сверху */
+            max-width: 300px; /* Максимальная ширина рамки */
+        }
+
+        /* Стиль для текста */
+        .hover-text {
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        /* Изменение цвета текста при наведении */
+        .hover-text:hover {
+            color: blue;
+        }
+        
+       </style>
+       
+</head>
+<body bgcolor="#000" background="ypi.jpg">
+    
+    <h1 align="center" style="color:#ebebeb; font-size:30px; font-family:Calibri">Приветствую вас на моей странице</h1>
+    <p align="center"> Это страница с моим резюме. Меня зовут Яськевич Константин, я учусь в МГТУ "Станкин".</p>
+    <p align="center"> Группа АДБ-21-06.</p>
+
+        <!-- Контейнер для изображения -->
+    <div class="image-container">
+        <img src="kon.jpg" alt="Ваше изображение">
+    </div>
+
+    <div class="container">
+        <h2 class="ponti">Интересы</h2>
+        <p class="shrift"><i>Игры</i></p>
+        <p><i>Автомобили</i></p>
+        <p><i>Музыка</i></p>
+    </div>
+
+    <div>
+        <h2>Любимые отрасли в науке</h2>
+        <p><i>Программирование на C++.</i></p>
+        <p><i>Физкультура</i></p>
+        <p><i>Психология</i></p>
+    </div>
+
+    <div>
+        <h2>Ссылки:</h2>
+        <p>Vk-Костя: <a href="https://vk.com/kostyan_xd">https://vk.com/kostyan_xd</a></p>
+        <p>Telegram-Костя: <a href="https://t.me/Kostik_xD">https://t.me/Kostik_xD</a></p>
+    </div>
+
+</body>
+<body style="color: #ebebeb;">
+    <input type="text" id="newSurname" placeholder="Введите новую фамилию">
+    <button onclick="changeSurname()">Изменить фамилию</button>
+    <p>Текущая фамилия: <span id="surname">Яськевич</span></p>
+
+    <script>
+        function changeSurname() {
+            var newSurname = document.getElementById("newSurname").value;
+            document.getElementById("surname").innerText = newSurname;
+        }
+    </script>
+    <div class="scripts-container">
+        <p>Скрипты:</p>
+        <button onclick="askName()">Спросить имя</button>
+        <button onclick="askAge()">Спросить возраст</button>
+    </div>
+    
+        <script>
+            function askName() {
+                if (confirm('Доброго времени суток, у этой страницы есть к вам вопрос, вы готовы ответить?')){
+                var name = prompt('Как вас зовут?','Введите сюда ваше имя');
+                var admin = name;
+                alert("Ваше имя - "+admin)
+                }
+                alert("Спасибо, что уделили время")
+            }
+        </script>
+
+        <script>
+            function askAge() {
+                if (confirm('Доброго времени суток, у этой страницы есть к вам вопрос, вы готовы ответить?')) {
+                while (true) {
+                        var age = prompt('ваш возраст?');
+                        if (confirm("Ваш возраст - " + age + " ?")) {
+                            alert("Спасибо, что уделили время")
+                            break
+                        }
+                        else {
+                            alert("Вы нажали кнопку отмена")
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <title>JavaScript в HTML</title>
+        <script>
+            function areEqual() {
+                // Получаем значения из полей ввода
+                var num1 = document.getElementById("num1").value;
+                var num2 = document.getElementById("num2").value;
+                
+                // Проверяем, равны ли числа
+                var result = num1 === num2;
+
+                // Отображаем результат в окошке
+                document.getElementById("result").innerText = result ? "Числа равны" : "Числа не равны";
+            }
+
+            function findMin() {
+                // Получаем значения из полей ввода
+                var num1 = parseFloat(document.getElementById("num1").value);
+                var num2 = parseFloat(document.getElementById("num2").value);
+
+                // Находим минимум двух чисел
+                var min = num1 < num2 ? num1 : num2;
+
+                // Отображаем результат в окошке
+                document.getElementById("result").innerText = "Минимум: " + min;
+            }
+
+            function findMax() {
+                // Получаем значения из полей ввода
+                var num1 = parseFloat(document.getElementById("num1").value);
+                var num2 = parseFloat(document.getElementById("num2").value);
+
+                // Находим максимум двух чисел
+                var max = num1 > num2 ? num1 : num2;
+
+                // Отображаем результат в окошке
+                document.getElementById("result").innerText = "Максимум: " + max;
+            }
+        </script>
+
+        <h1 align="center" class="hover-text" style="font-size: 30px;">JavaScript</h1>
+        <h1>Проверка на равенство чисел, нахождение max, min:</h1>
+        <label for="num1">Число 1:</label>
+        <input type="text" id="num1"><br><br>
+        <label for="num2">Число 2:</label>
+        <input type="text" id="num2"><br><br>
+        <button onclick="areEqual()">Проверить</button>
+        <button onclick="findMin()">Найти минимум</button>
+        <button onclick="findMax()">Найти максимум</button><br><br>
+        <div id="result"></div>
+
+</body>
+</html>
